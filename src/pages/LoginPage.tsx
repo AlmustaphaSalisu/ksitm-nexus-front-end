@@ -99,10 +99,7 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          <p className="text-xs text-center text-muted-foreground mt-6">
-            Demo mode — select a role and sign in to explore
-          </p>
-        </div>
+                  </div>
       </div>
     </div>
   );

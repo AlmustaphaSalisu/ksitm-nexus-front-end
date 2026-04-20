@@ -15,8 +15,12 @@ export default function AdminDashboard() {
           <p className="text-muted-foreground text-sm">KSITM academic analytics dashboard</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm"><Download className="h-4 w-4 mr-1.5" /> Export PDF</Button>
-          <Button variant="outline" size="sm"><FileText className="h-4 w-4 mr-1.5" /> Export Excel</Button>
+          <Button variant="outline" size="sm" onClick={() => alert('PDF export functionality would be implemented here')}>
+            <Download className="h-4 w-4 mr-1.5" /> Export PDF
+          </Button>
+          <Button variant="outline" size="sm" onClick={() => alert('Excel export functionality would be implemented here')}>
+            <FileText className="h-4 w-4 mr-1.5" /> Export Excel
+          </Button>
         </div>
       </div>
 

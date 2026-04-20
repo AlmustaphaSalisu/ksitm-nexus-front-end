@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MessageSquare, Send, Search, Filter, Clock, Check, CheckCheck } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,45 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 const LecturerMessagesPage = () => {
+  const [newMessage, setNewMessage] = useState('');
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: 'John Smith',
+      content: 'Hi Professor, I have a question about the data structures assignment.',
+      time: '3:30 PM',
+      isMe: false,
+    },
+    {
+      id: 2,
+      sender: 'Me',
+      content: 'Sure, what specific part are you having trouble with?',
+      time: '3:35 PM',
+      isMe: true,
+    },
+    {
+      id: 3,
+      sender: 'John Smith',
+      content: 'The binary tree traversal algorithms are a bit confusing.',
+      time: '3:40 PM',
+      isMe: false,
+    },
+    {
+      id: 4,
+      sender: 'Me',
+      content: 'Let me explain. In-order traversal visits left subtree, then root, then right subtree...',
+      time: '3:45 PM',
+      isMe: true,
+    },
+    {
+      id: 5,
+      sender: 'John Smith',
+      content: 'Thank you for the clarification on the assignment',
+      time: '3:50 PM',
+      isMe: false,
+    },
+  ]);
+
   const conversations = [
     {
       id: 1,
@@ -45,43 +85,26 @@ const LecturerMessagesPage = () => {
     },
   ];
 
-  const messages = [
-    {
-      id: 1,
-      sender: 'John Smith',
-      content: 'Hi Professor, I have a question about the data structures assignment.',
-      time: '3:30 PM',
-      isMe: false,
-    },
-    {
-      id: 2,
-      sender: 'Me',
-      content: 'Sure, what specific part are you having trouble with?',
-      time: '3:35 PM',
-      isMe: true,
-    },
-    {
-      id: 3,
-      sender: 'John Smith',
-      content: 'The binary tree traversal algorithms are a bit confusing.',
-      time: '3:40 PM',
-      isMe: false,
-    },
-    {
-      id: 4,
-      sender: 'Me',
-      content: 'Let me explain. In-order traversal visits left subtree, then root, then right subtree...',
-      time: '3:45 PM',
-      isMe: true,
-    },
-    {
-      id: 5,
-      sender: 'John Smith',
-      content: 'Thank you for the clarification on the assignment',
-      time: '3:50 PM',
-      isMe: false,
-    },
-  ];
+  const handleSendMessage = () => {
+    if (newMessage.trim()) {
+      const newMsg = {
+        id: messages.length + 1,
+        sender: 'Me',
+        content: newMessage,
+        time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
+        isMe: true,
+      };
+      setMessages([...messages, newMsg]);
+      setNewMessage('');
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -90,7 +113,7 @@ const LecturerMessagesPage = () => {
           <h1 className="text-3xl font-bold">Messages</h1>
           <p className="text-muted-foreground">Communicate with students and colleagues</p>
         </div>
-        <Button>
+        <Button onClick={() => alert('New message functionality would be implemented here')}>
           <MessageSquare className="mr-2 h-4 w-4" />
           New Message
         </Button>
@@ -190,8 +213,14 @@ const LecturerMessagesPage = () => {
 
               {/* Message Input */}
               <div className="flex gap-2">
-                <Input placeholder="Type your message..." className="flex-1" />
-                <Button>
+                <Input 
+                  placeholder="Type your message..." 
+                  className="flex-1" 
+                  value={newMessage}
+                  onChange={(e) => setNewMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+                <Button onClick={handleSendMessage} disabled={!newMessage.trim()}>
                   <Send className="h-4 w-4" />
                 </Button>
               </div>

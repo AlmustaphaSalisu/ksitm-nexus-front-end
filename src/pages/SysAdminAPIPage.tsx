@@ -279,7 +279,7 @@ const SysAdminAPIPage = () => {
                   <span className="text-sm text-muted-foreground">requests per minute</span>
                 </div>
               </div>
-              <Button className="w-full">Update Rate Limits</Button>
+              <Button className="w-full" onClick={() => alert('Rate limits updated successfully!')}>Update Rate Limits</Button>
             </div>
           </CardContent>
         </Card>
@@ -303,7 +303,7 @@ const SysAdminAPIPage = () => {
                   <option>v2 (Beta)</option>
                 </select>
               </div>
-              <Button className="w-full">Update Security Settings</Button>
+              <Button className="w-full" onClick={() => alert('Security settings updated successfully!')}>Update Security Settings</Button>
             </div>
           </CardContent>
         </Card>

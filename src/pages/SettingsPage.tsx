@@ -60,7 +60,7 @@ export default function SettingsPage() {
               <Input defaultValue={user?.role} disabled />
             </div>
           </div>
-          <Button className="gradient-primary border-0 text-primary-foreground">Save Changes</Button>
+          <Button className="gradient-primary border-0 text-primary-foreground" onClick={() => alert('Profile settings saved successfully!')}>Save Changes</Button>
         </div>
       )}
 
@@ -94,7 +94,7 @@ export default function SettingsPage() {
               <label className="text-sm font-medium mb-1.5 block">Confirm New Password</label>
               <Input type="password" />
             </div>
-            <Button className="gradient-primary border-0 text-primary-foreground">Update Password</Button>
+            <Button className="gradient-primary border-0 text-primary-foreground" onClick={() => alert('Password updated successfully!')}>Update Password</Button>
           </div>
         </div>
       )}

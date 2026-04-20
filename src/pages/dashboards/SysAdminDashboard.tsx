@@ -74,7 +74,7 @@ export default function SysAdminDashboard() {
         <div className="rounded-lg border bg-card p-5 shadow-card">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold">User Management</h3>
-            <Button size="sm" className="gradient-primary border-0 text-primary-foreground"><Plus className="h-4 w-4 mr-1" /> Add User</Button>
+            <Button size="sm" className="gradient-primary border-0 text-primary-foreground" onClick={() => alert('Add user functionality would be implemented here')}><Plus className="h-4 w-4 mr-1" /> Add User</Button>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -102,8 +102,8 @@ export default function SysAdminDashboard() {
                     <td className="py-3 text-muted-foreground">{u.lastLogin}</td>
                     <td className="py-3">
                       <div className="flex gap-1">
-                        <button className="rounded p-1.5 hover:bg-muted"><Edit className="h-3.5 w-3.5" /></button>
-                        <button className="rounded p-1.5 hover:bg-destructive/10 text-destructive"><Trash2 className="h-3.5 w-3.5" /></button>
+                        <button className="rounded p-1.5 hover:bg-muted" onClick={() => alert('Edit user functionality would be implemented here')}><Edit className="h-3.5 w-3.5" /></button>
+                        <button className="rounded p-1.5 hover:bg-destructive/10 text-destructive" onClick={() => alert('Delete user functionality would be implemented here')}><Trash2 className="h-3.5 w-3.5" /></button>
                       </div>
                     </td>
                   </tr>

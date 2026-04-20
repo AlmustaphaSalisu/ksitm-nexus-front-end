@@ -19,7 +19,7 @@ export default function ReportsPage() {
           <h2 className="text-2xl font-bold">Reports</h2>
           <p className="text-muted-foreground text-sm">Generate and download academic reports</p>
         </div>
-        <Button className="gradient-primary border-0 text-primary-foreground">
+        <Button className="gradient-primary border-0 text-primary-foreground" onClick={() => alert('New report generation functionality would be implemented here')}>
           <FileText className="h-4 w-4 mr-1.5" /> Generate New Report
         </Button>
       </div>
@@ -43,8 +43,8 @@ export default function ReportsPage() {
               </div>
             </div>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm"><Download className="h-4 w-4 mr-1" /> PDF</Button>
-              <Button variant="outline" size="sm"><Download className="h-4 w-4 mr-1" /> Excel</Button>
+              <Button variant="outline" size="sm" onClick={() => alert('PDF export functionality would be implemented here')}><Download className="h-4 w-4 mr-1" /> PDF</Button>
+              <Button variant="outline" size="sm" onClick={() => alert('Excel export functionality would be implemented here')}><Download className="h-4 w-4 mr-1" /> Excel</Button>
             </div>
           </div>
         ))}
