@@ -54,7 +54,7 @@ export default function LandingPage() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-foreground mb-6 leading-tight">
               Smart Learning Analytics for{' '}
-              <span className="font-black text-primary bg-primary/10 px-3 py-1 rounded-lg border-2 border-primary/30">KSITM</span>
+              <span className="inline-block align-middle leading-tight font-black text-primary bg-primary/10 px-3 py-0.5 rounded-lg border-2 border-primary/30">KSITM</span>
             </h1>
             <p className="text-lg text-primary-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed">
               Harness AI to improve teaching quality, boost student performance, and detect dropout risks early. A comprehensive analytics platform for Katsina State Institute of Technology and Management.
