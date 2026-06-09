@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Welcome to Al Mustapha's project
 
 TODO: Document your project here
