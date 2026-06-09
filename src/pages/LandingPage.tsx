@@ -19,15 +19,25 @@ const stats = [
 ];
 
 export default function LandingPage() {
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-md">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
+            <button
+              type="button"
+              onClick={handleRefresh}
+              title="Refresh"
+              aria-label="Refresh the system"
+              className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary transition-transform hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
               <GraduationCap className="h-5 w-5 text-primary-foreground" />
-            </div>
+            </button>
             <span className="text-lg font-bold">KSITM Analytics</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
